@@ -1,0 +1,23 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{microtype}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+	\section*{LOOPER}
+	You find yourself trapped in a time loop reminiscent of the classic "Groundhog Day." Each day resets at dawn, and you must uncover the true ending in order to close the loop. Initially, you may not know very much, limiting your actions. However, as you navigate through the day, performing specific actions may allow you to learn how to do certain things, giving you the opportunity to act differently the next time a specific event occurs.\\
+	
+	\noindent
+	While in theory, given enough time, you could try everything and reach the true ending eventually, it looks like the relentless repetition is gradually driving you to madness. If you fail to discover the true ending within $k$ loops, you will succumb to insanity, making it impossible to ever achieve the true ending.\\
+	
+	\noindent
+	Formally, let this scenario be represented as a directed graph $G=(V,E)$, where each node $v \in V$ corresponds to an event, and the directed edges represent events accessible from this event. Let the set of qualifications be denoted by $Q= \{q_1, q_2,\ldots,q_n\}$ and the set of prerequisites be denoted by $P=\{p_1, p_2,\ldots,p_n\}$. The start and target nodes are respectively denoted by $s,t\in V$. Each vertex $v$ has a directed edge leading to $s$ which decrements $k$ by $1$, and cannot be traversed over if $k\leq0$. All other directed edges may require any number of prerequisites $p \in P$, and all nodes can grant any number qualifications $q \in Q$. Having qualification $q_i$ is necessary to traverse over an edge which has prerequisite $p_i$.\\ 
+	
+	\noindent
+	Prove that it is NP-Hard to decide whether a traversable path from $s$ to $t$ exists given a specific graph $G$ and $k$ value. A traversable path is defined as a sequence of edges that allows reaching the target node $t$ from the start node $s$ while satisfying all qualifications and prerequisites within the limit of $k$ loops. The output should be either TRUE or FALSE.
+\end{document}
